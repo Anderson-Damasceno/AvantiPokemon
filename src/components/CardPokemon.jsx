@@ -1,15 +1,35 @@
-import './CardPokemon.css';
+import "./CardPokemon.css";
 
-export default function CardPokemon(){
-    return(<div> 
-        <div className="container"> 
-            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png" className='imagem'></img>
-            <div className="info">
-                <p>#0001</p>
-                <h5> Pedro</h5>
-            </div>
-            <div className='habilidade1'>oi</div>
-            <div className='habilidade2'>tchau</div>
-         </div>
-    </div>)
+export default function CardPokemon() {
+  const pokemons = [
+    {
+      id: "001",
+      name: "Pedro",
+      skills: ["grass", "terra"],
+    },
+    {
+      id: "002",
+      name: "Pedro",
+      skills: ["grass", "terra"],
+    },
+  ];
+  return pokemons.map((p, index) => (
+    <div key={index}>
+      <div className="container">
+        <img
+          src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png"
+          className="imagem"
+        ></img>
+        <div className="info">
+          <p>{p.id}</p>
+          <h5> {p.name}</h5>
+        </div>
+        {p.skills.map((s, index) => (
+          <div className={`habilidade${index + 1}`} key={s}>
+            {s}
+          </div>
+        ))}
+      </div>
+    </div>
+  ));
 }
