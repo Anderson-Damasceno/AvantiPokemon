@@ -20,3 +20,9 @@ Certifique-se de ter instalado as dependências do projeto utilizando o comando
 ```
 npm install
 ```
+## Participantes
+
+Anderson Damasceno
+Laiz Cunha
+Francisco Pedro
+Demétrio Linz
